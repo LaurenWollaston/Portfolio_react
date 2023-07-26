@@ -1,0 +1,38 @@
+[
+    {
+        "header":"Good Eats",
+        "imageref":"./projectImages/GoodEats.webp",
+        "gitRef":"https://github.com/LaurenWollaston/Rolodiet",
+        "projectRef":"https://good-eats-b2abe2613d0c.herokuapp.com/"
+    },
+    {
+        "header":"Javascript Quiz",
+        "imageref":"./projectImages/javascriptQuiz.webp",
+        "gitRef":"https://github.com/LaurenWollaston/Javascript-quiz",
+        "projectRef":"https://laurenwollaston.github.io/Javascript-quiz/"
+    },
+    {
+        "header":"Techline",
+        "imageref":"./projectImages/techline.webp",
+        "gitRef":"https://github.com/LaurenWollaston/Tech-Blog",
+        "projectRef":"https://techline.herokuapp.com/"
+    },
+    {
+        "header":"Weather Report",
+        "imageref":"./projectImages/weather.webp",
+        "gitRef":"https://github.com/LaurenWollaston/Module6-WeatherAPI",
+        "projectRef":"https://laurenwollaston.github.io/Module6-WeatherAPI/"
+    },
+    {
+        "header":"Bottomfeeder",
+        "imageref":"./projectImages/bottomfeeder.webp",
+        "gitRef":"https://github.com/chartok/Bottom-Feeders",
+        "projectRef":"https://chartok.github.io/Bottom-Feeders/"
+    },
+    {
+        "header":"Note Taker",
+        "imageref":"./projectImages/notes.webp",
+        "gitRef":"https://github.com/LaurenWollaston/Module-11",
+        "projectRef":"https://module-11-note-taker-app.herokuapp.com/"
+    }
+]

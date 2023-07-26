@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Header, Navbar, About, Contact, Portfolio, Resume } from './components';
+import { Header, Navbar, About, Contact, Portfolio, Resume, Footer } from './components';
 import './layouts/overstyle.css';
 
 function App() {
@@ -42,6 +42,8 @@ function App() {
       <div className="ui container">
         {renderPageComponent()}
       </div>
+      <Footer />
+      
     </div>
   );
 }
