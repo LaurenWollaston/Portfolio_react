@@ -1,9 +1,10 @@
 import React from 'react';
+import Message from '../message';
 
 const Contact = () => {
     return (
       <div className="Contact">
-        Wow would you look at that, another placeholder.
+        <Message />
       </div>
     );
   }
