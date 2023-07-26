@@ -11,6 +11,7 @@ const Portfolio = () => {
           header={project.header}
           imageref={project.imageref}
           gitRef={project.gitRef}
+          projectRef={project.projectRef}
         />
       ))}
     </div>
