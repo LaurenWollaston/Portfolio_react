@@ -3,11 +3,10 @@ import Card from '../Card';
 
 const Resume = () => {
   const handleDownloadClick = () => {
-    // Replace './flower.txt' with the actual URL of the file you want to serve for download
-    const fileURL = './flower.txt';
+    const fileURL = './Resume_LaurenWollaston.docx';
     const link = document.createElement('a');
     link.href = fileURL;
-    link.setAttribute('download', 'flower.txt');
+    link.setAttribute('download', 'Resume_LaurenWollaston.docx');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -20,10 +19,9 @@ const Resume = () => {
       cardBody={
         <>
           <p>
-            I do not have a resume. If I have one after consulting career services, I will put it here.
-            To demonstrate the ability to serve downloads, click the button below to download a text file with ASCII art.
+            I have experience in mySQL, MongoDB, Javascript, React, RESTful APIs, HTML, CSS, Bootstrap, Front-End development, Back-End development, and Responsive Web Design. I can be contacted through my email, LaurenWollaston@outlook.com, or through linkedIn, which is linked in the bottom left corner of the screen.
           </p><div style={{display:'flex',flexDirection:'row',width:'100%',justifyContent:'center'}}>
-            <button onClick={handleDownloadClick} style={{border:'3px outset white',backgroundColor:'gainsboro',color:'black'}}>Download ASCII Art</button>
+            <button onClick={handleDownloadClick} style={{border:'3px outset white',backgroundColor:'gainsboro',color:'black'}}>Download Resume</button>
           </div>
         </>
       }

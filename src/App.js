@@ -3,13 +3,13 @@ import { Header, Navbar, About, Contact, Portfolio, Resume, Footer } from './com
 import './layouts/overstyle.css';
 
 function App() {
-  const [page, setPage] = useState("About Me");
+  const [page, setPage] = useState("Portfolio");
 
   const faviconMap = {
     'About Me': './favicon.ico',
-    'Portfolio': './quetzalcoatl.ico',
-    'Contact': './chaneque.ico',
-    'Resume': './acatl.ico',
+    'Portfolio': './favicon.ico',
+    'Contact': './favicon.ico',
+    'Resume': './favicon.ico',
     '*': './favicon.ico',
   };
 

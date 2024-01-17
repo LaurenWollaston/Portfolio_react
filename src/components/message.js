@@ -42,14 +42,42 @@ const Message = () => {
       ...prevHover,
       [name]: true
     }));
+  
     if (value === '') {
+      setShowWarning((prevWarning) => ({
+        ...prevWarning,
+        [name]: true
+      }));
+  
+      // Clear the warning after 2 seconds
+      setTimeout(() => {
         setShowWarning((prevWarning) => ({
           ...prevWarning,
-          [name]: true
+          [name]: false
         }));
-      }
-
-    if (formData[name] !== '') {
+      }, 2000);
+    } else {
+      // If the field is not empty, immediately clear the warning
+      setShowWarning((prevWarning) => ({
+        ...prevWarning,
+        [name]: false
+      }));
+    }
+  };
+  
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    setHoverOff((prevHover) => ({
+      ...prevHover,
+      [name]: true
+    }));
+  
+    if (value === '' && (formData[name] !== '' || !showWarning[name])) {
+      setShowWarning((prevWarning) => ({
+        ...prevWarning,
+        [name]: true
+      }));
+    } else if (value !== '') {
       setShowWarning((prevWarning) => ({
         ...prevWarning,
         [name]: false
@@ -65,13 +93,28 @@ const Message = () => {
         message: hoverOff.message && formData.message === '' ? false : prevWarning.message
       }));
     }, 2000);
-
+  
     return () => clearTimeout(timeout);
   }, [hoverOff, formData]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, message } = formData;
+  
+    // Check if any of the fields are empty
+    if (name === '' || email === '' || message === '') {
+      // Show the error messages for empty fields (if not already shown)
+      setShowWarning((prevWarning) => ({
+        name: name === '' ? true : prevWarning.name,
+        email: email === '' ? true : prevWarning.email,
+        message: message === '' ? true : prevWarning.message,
+      }));
+  
+      // Do not proceed with submission
+      return;
+    }
+  
+    // All fields are filled, proceed with submission
     const emailBody = `Message from: ${name}\n\n${message}`;
     const mailtoLink = `mailto:email@email.com?subject=Message from ${name}&body=${encodeURIComponent(emailBody)}`;
     window.location.href = mailtoLink;
@@ -95,11 +138,10 @@ const Message = () => {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onBlur={handleBlur} 
         />
         {showWarning.name && (
-          <span style={{ color: 'red',position:'absolute',left:'47%' }}>{`Name is required!`}</span>
+          <span style={{ color: '#d96f6f',position:'absolute',left:'47%', marginTop:'5px' }}>{`Name is required!`}</span>
         )}
       </div>
       <div>
@@ -110,11 +152,10 @@ const Message = () => {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onBlur={handleBlur} 
         />
         {showWarning.email && (
-          <span style={{ color: 'red',position:'absolute',left:'47%' }}>{`Email is required!`}</span>
+          <span style={{ color: '#d96f6f',position:'absolute',left:'47%',  marginTop:'5px' }}>{`Email is required!`}</span>
         )}
       </div>
       <div>
@@ -124,11 +165,10 @@ const Message = () => {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onBlur={handleBlur} 
         />
         {showWarning.message && (
-          <span style={{ color: 'red',position:'absolute', left:'47%' }}>{`Message is required!`}</span>
+          <span style={{ color: '#d96f6f',position:'absolute', left:'47%', marginTop: '5px' }}>{`Message is required!`}</span>
         )}
       </div>
       <button type="submit">Submit</button>
