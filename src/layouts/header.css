@@ -2,6 +2,8 @@
     background-color: black;
     height: 120px;
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
     display: flex;
     align-content: center;
     text-align: center;
@@ -52,6 +54,7 @@
   ul {
     list-style-type: none;
     display: inline-flex;
+    align-items: center;
   }
   
   li:hover {
@@ -64,6 +67,12 @@
     background: rgba(0, 0, 0, 0);
     border: none;
     color: white;
+    height: 100%;
+    width: 100%;
+
+  }
+  h1{
+    margin-left: 15px;
   }
 
   @-moz-document url-prefix() {
@@ -72,3 +81,23 @@
       box-shadow: 0 0 20px rgb(213, 224, 113);
     }
   }
+ 
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (max-width : 1024px) {
+.header{
+  padding-left: 18vw;
+}
+ul{
+  flex-direction: column;
+}
+button {
+  text-wrap: nowrap;
+  padding:0;
+  margin:-10%;
+  width:300%;
+}
+h1{
+  margin-left: -20%;
+}
+}

@@ -1,11 +1,5 @@
 [
     {
-        "header":"Good Eats",
-        "imageref":"./projectImages/GoodEats.webp",
-        "gitRef":"https://github.com/LaurenWollaston/Rolodiet",
-        "projectRef":"https://good-eats-b2abe2613d0c.herokuapp.com/"
-    },
-    {
         "header":"Javascript Quiz",
         "imageref":"./projectImages/javascriptQuiz.webp",
         "gitRef":"https://github.com/LaurenWollaston/Javascript-quiz",
@@ -34,5 +28,11 @@
         "imageref":"./projectImages/notes.webp",
         "gitRef":"https://github.com/LaurenWollaston/Module-11",
         "projectRef":"https://module-11-note-taker-app.herokuapp.com/"
+    },
+    {
+        "header":"Good Eats",
+        "imageref":"./projectImages/GoodEats.webp",
+        "gitRef":"https://github.com/LaurenWollaston/Rolodiet",
+        "projectRef":"https://good-eats-b2abe2613d0c.herokuapp.com/"
     }
 ]

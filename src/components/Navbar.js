@@ -7,7 +7,6 @@ const Navbar = ({ setPage }) => {
         <ul>
           <button onClick={() => setPage('About Me')}><li>About Me</li></button>
           <button onClick={() => setPage('Portfolio')}><li>Portfolio</li></button>
-          <button onClick={() => setPage('Contact')}><li>Contact</li></button>
           <button onClick={() => setPage('Resume')}><li>Resume</li></button>
         </ul>
       </nav>
