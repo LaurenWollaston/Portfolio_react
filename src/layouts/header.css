@@ -57,11 +57,10 @@
     align-items: center;
   }
   
-  li:hover {
+  #activated {
     font-weight: 900;
     color: #fff;
-    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(213, 224, 113), 0 0 82px rgb(213, 224, 113), 0 0 92px rgb(213, 224, 113), 0 0 102px rgb(213, 224, 113), 0 0 151px rgb(213, 224, 113);
-  }
+    text-shadow: 0px 4px 4px rgba(252,255,226,0.79);  }
   
   button {
     background: rgba(0, 0, 0, 0);
