@@ -6,12 +6,13 @@ const About = () => {
   return (
     <Card
       header="About Me"
-      imageref="./123914408.webp"
+      imageref={`${process.env.PUBLIC_URL}/mscimages/abtme.webp`}
       cardBody={
         <>
-          <p>My name is Lauren Wollaston, I am a full stack web developer.</p>
-          <p>Some of the web applications I've developed can be found in the portfolio section.</p>
-          <p>My resume can be downloaded in the resume section, or I can be contacted at my email on the contact page, or through my github or linkedIn, which are linked in the bottom left corner of the screen.</p>
+          <p style={{ textAlign: 'center', fontWeight: 'bold',fontSize:"30px",marginBottom:"5px" }}>Lauren Wollaston</p><p style={{ textAlign: 'center' }}> Full stack web development.</p>
+          <p>Most of my demo projects display basic proficiency in javascript, familiarity with using apis and dealing with data storage. I am familiar with both SQL and object oriented databases but do not have any of those in my demos because they cost money to host.</p>
+          <p>Crypts and Creatures was coded with AI assistance and is an exercise with what that can do. MY goal with is it to have a simple game with deeper mechanics than you would normally use with a mobile game, a dungeon crawler with a simple objective that can be open and closed very quickly.</p>
+          <p>Please feel free to contact me at Choccococooa@gmail.com, through my github, or through Laurenwollaston@outlook.com. I am currently available for employment.</p>
         </>
       }
     />

@@ -1,5 +1,11 @@
 [
     {
+        "header":"Crypts and Creatures",
+        "imageref":"./projectImages/cryptsandcreatures.webp",
+        "gitRef":"https://github.com/ChikuObasanjo/CryptsandCreatures",
+        "projectRef":"https://chikuobasanjo.github.io/CryptsandCreatures/"
+    },
+    {
         "header":"Javascript Quiz",
         "imageref":"./projectImages/javascriptQuiz.webp",
         "gitRef":"https://github.com/LaurenWollaston/Javascript-quiz",
@@ -16,11 +22,5 @@
         "imageref":"./projectImages/weather.webp",
         "gitRef":"https://github.com/LaurenWollaston/Module6-WeatherAPI",
         "projectRef":"https://laurenwollaston.github.io/Module6-WeatherAPI/"
-    },
-    {
-        "header":"Bottomfeeder",
-        "imageref":"./projectImages/bottomfeeder.webp",
-        "gitRef":"https://github.com/chartok/Bottom-Feeders",
-        "projectRef":"https://chartok.github.io/Bottom-Feeders/"
     }
 ]
