@@ -4,9 +4,9 @@ import '../layouts/pseudocard.css';
 const ProjectCard = ({ header, imageref, projectRef, featured = false, preview = false, showcase = false, slideNumber, slideCount }) => {
   const className = `projectCard${featured ? ' projectCardFeatured' : ''}${preview ? ' projectCardPreview' : ''}`;
   const cryptsAssets = [
-    'screenshot-3-town.png',
-    'screenshot-4-tomb.png',
-    'screenshot-5-market.png',
+    'SC3.png',
+    'SC4.png',
+    'SC5.png',
   ];
   const cardContent = (
     <>
@@ -42,7 +42,7 @@ const ProjectCard = ({ header, imageref, projectRef, featured = false, preview =
             <img
               key={asset}
               className={`cryptsShowcaseImage cryptsShowcaseImage${index + 1}`}
-              src={`${process.env.PUBLIC_URL}/projectImages/cryptsdemo/${asset}`}
+              src={`${process.env.PUBLIC_URL}/projectImages/CryptsDemo/${asset}`}
               alt=""
             />
           ))}
