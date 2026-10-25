@@ -2,9 +2,14 @@ body{
     color: white;
     font-size: 24px;
 }
+
 input{
     margin-top: 2%;
 }
 textarea{
     margin-top: 2%;
+}
+
+a{
+    color: #00ff93;
 }

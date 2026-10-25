@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Card from '../Card';
 
 const Resume = () => {
-  const handleDownloadClick = () => {
-    const fileURL = './Resume_LaurenWollaston.docx';
-    const link = document.createElement('a');
-    link.href = fileURL;
-    link.setAttribute('download', 'Resume_LaurenWollaston.docx');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  useEffect(() => {
+    document.body.style.backgroundColor = '#00afaf';
+
+    return () => {
+      document.body.style.backgroundColor = '';
+    };
+  }, []);
 
   return (
     <Card

@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { Header, Navbar, About, Contact, Portfolio, Resume, Footer } from './components';
+import { Header, About, Contact, Portfolio, Resume, Footer } from './components';
 import './layouts/overstyle.css';
 
 function App() {
-  const [page, setPage] = useState("Portfolio");
-
-  const faviconMap = {
-    'About Me': './favicon.ico',
-    'Portfolio': './favicon.ico',
-    'Contact': './favicon.ico',
-    'Resume': './favicon.ico',
-    '*': './favicon.ico',
-  };
+  const [page, setPage] = useState('Portfolio');
 
   useEffect(() => {
-  document.title = `Lauren Wollaston ~ ${page} ~`;
+    const faviconMap = {
+      'About Me': './favicon.ico',
+      Portfolio: './favicon.ico',
+      Contact: './favicon.ico',
+      Resume: './favicon.ico',
+      '*': './favicon.ico',
+    };
 
-  const pageico = faviconMap[page] || './favicon.ico';
-  const favicon = document.querySelector('link[rel="icon"]');
-  favicon.href = pageico;
-}, [page]);
+    document.title = `Lauren Wollaston ~ ${page} ~`;
+
+    const pageico = faviconMap[page] || faviconMap['*'];
+    const favicon = document.querySelector('link[rel="icon"]');
+
+    if (favicon) {
+      favicon.href = pageico;
+    }
+  }, [page]);
 
   const renderPageComponent = () => {
     switch (page) {
@@ -39,7 +42,7 @@ function App() {
   return (
     <div>
       <Header page={page} setPage={setPage} />
-      <div className="ui container">
+      <div className="ui container" style={{width:'100%'}}>
         {renderPageComponent()}
       </div>
       <Footer />

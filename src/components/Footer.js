@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Footer = ({}) => {
+const Footer = () => {
   return (
-    <div style={{ backgroundColor: 'rgb(0 0 0 / 82%)', padding: '20px', textAlign: 'left',position:'fixed',bottom:'0',width:'100%',marginBottom:'0',paddingBottom:'1vh',paddingTop:'1vh' }}>
+    <div style={{ backgroundColor: 'rgb(0 0 0 / 82%)', position:'fixed',bottom:'0',width:'100%',fontSize:'6px',lineHeight:'normal' }}>
       <div>
         <a href="https://www.linkedin.com/in/lauren-wollaston-07a6ab279/" target="_blank" className='footerLink' rel="noopener noreferrer">
           <img src="./linkedin.webp" alt="LinkedIn" style={{ width: '50px', height: '50px', margin: '10px', marginBottom:'0px',marginRight:'2vw' }} />

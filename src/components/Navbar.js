@@ -4,11 +4,11 @@ import '../layouts/header.css'
 
 const Navbar = ({page, setPage }) => {
     return (
-      <nav>
-        <ul>
-          <button id={page==='About Me'? 'activated':''} onClick={() => setPage('About Me')}><li>About Me</li></button>
-          <button id={page==='Portfolio'? 'activated':''} onClick={() => setPage('Portfolio')}><li>Portfolio</li></button>
-          <button id={page==='Resume'? 'activated':''} onClick={() => setPage('Resume')}><li>Resume</li></button>
+      <nav className="headerNav" aria-label="Main navigation">
+        <ul className="headerNavList">
+          <li><button className="headerNavButton" aria-current={page === 'About Me' ? 'page' : undefined} onClick={() => setPage('About Me')}>About Me</button></li>
+          <li><button className="headerNavButton" aria-current={page === 'Portfolio' ? 'page' : undefined} onClick={() => setPage('Portfolio')}>Portfolio</button></li>
+          <li><button className="headerNavButton" aria-current={page === 'Resume' ? 'page' : undefined} onClick={() => setPage('Resume')}>Resume</button></li>
         </ul>
       </nav>
     );

@@ -27,44 +27,6 @@ const Message = () => {
     }));
   };
 
-  const handleMouseEnter = (e) => {
-    const { name, value } = e.target;
-    setHoverOff((prevHover) => ({
-      ...prevHover,
-      [name]: false
-    }));
-  
-  };
-
-  const handleMouseLeave = (e) => {
-    const { name, value } = e.target;
-    setHoverOff((prevHover) => ({
-      ...prevHover,
-      [name]: true
-    }));
-  
-    if (value === '') {
-      setShowWarning((prevWarning) => ({
-        ...prevWarning,
-        [name]: true
-      }));
-  
-      // Clear the warning after 2 seconds
-      setTimeout(() => {
-        setShowWarning((prevWarning) => ({
-          ...prevWarning,
-          [name]: false
-        }));
-      }, 2000);
-    } else {
-      // If the field is not empty, immediately clear the warning
-      setShowWarning((prevWarning) => ({
-        ...prevWarning,
-        [name]: false
-      }));
-    }
-  };
-  
   const handleBlur = (e) => {
     const { name, value } = e.target;
     setHoverOff((prevHover) => ({

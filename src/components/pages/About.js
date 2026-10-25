@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../layouts/card.css';
 import Card from '../Card';
 
 const About = () => {
+
+  useEffect(() => {
+    document.body.style.backgroundColor = '#075c3b';
+
+    return () => {
+      document.body.style.backgroundColor = '';
+    };},[]);
+
   return (
     <Card
       header="About Me"

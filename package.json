@@ -4,12 +4,12 @@
   "homepage": "https://laurenwollaston.github.io/Portfolio_react/",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.4.0",
-    "bootstrap": "^5.3.0",
-    "dotenv": "^16.1.4",
+    "axios": "^1.20.0",
+    "bootstrap": "^5.3.8",
+    "dotenv": "^16.6.1",
     "pretty": "^2.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.26.0",
     "gh-pages": "^5.0.0"
   }
 }

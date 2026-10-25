@@ -1,102 +1,115 @@
 .header {
-    background-color: black;
-    height: 120px;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-content: center;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    position: relative;
-  }
-  
-  .header::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 13px;
-    background-image: linear-gradient(
-      to right,
-      rgb(180, 190, 83),
-      rgb(213, 224, 113) 30%,
-      rgb(224, 231, 159) 50%,
-      rgb(213, 224, 113) 70%,
-      rgb(180, 190, 83)
-    );
-    background-size: 100% 100%;
-    animation: neonGlow 6s linear infinite;
-  }
-  
-  @keyframes neonGlow {
-    0% {
-    box-shadow: 0 0 20px rgb(213, 224, 113), 0 0 20px rgb(213, 224, 113), 0 0 20px rgb(213, 224, 113)
-    }
-    50% {
-      box-shadow: 0 0 30px rgb(213, 224, 113), 0 0 30px rgb(213, 224, 113), 0 0 30px rgb(213, 224, 113), 0 0 30px rgb(213, 224, 113);
-    }
-    100% {
-      box-shadow: 0 0 20px rgb(213, 224, 113), 0 0 20px rgb(213, 224, 113), 0 0 20px rgb(213, 224, 113)
-    }
-  }
-  
-  li {
-    font-size: 24px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-right: 15px;
-  }
-  
-  ul {
-    list-style-type: none;
-    display: inline-flex;
-    align-items: center;
-  }
-  
-  #activated {
-    font-weight: 900;
-    color: #fff;
-    text-shadow: 0px 4px 4px rgba(252,255,226,0.79);  }
-  
-  button {
-    background: rgba(0, 0, 0, 0);
-    border: none;
-    color: white;
-    height: 100%;
-    width: 100%;
-
-  }
-  h1{
-    margin-left: 15px;
-  }
-
-  @-moz-document url-prefix() {
-    .header::before {
-      animation: none;
-      box-shadow: 0 0 20px rgb(213, 224, 113);
-    }
-  }
- 
-/* iPads (portrait and landscape) ----------- */
-@media only screen
-and (max-width : 1024px) {
-.header{
-  padding-left: 18vw;
-}
-ul{
+  position: relative;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 1rem 1.25rem;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  background: #050505;
 }
-button {
-  text-wrap: nowrap;
-  padding:0;
-  margin:-10%;
-  width:300%;
+
+.header::before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  background: linear-gradient(
+    to right,
+    rgb(180 190 83),
+    rgb(213 224 113) 30%,
+    rgb(224 231 159) 50%,
+    rgb(213 224 113) 70%,
+    rgb(180 190 83)
+  );
+  content: '';
+  animation: neonGlow 6s ease-in-out infinite;
 }
-h1{
-  margin-left: -20%;
+
+.headerTitle {
+  margin: 0;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.015em;
 }
+
+.headerNavList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.25rem, 2vw, 1.25rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.headerNavButton {
+  width: auto;
+  height: auto;
+  padding: 0.45rem 0.75rem;
+  color: rgb(255 255 255 / 78%);
+  font: inherit;
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  font-weight: 600;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.headerNavButton:hover,
+.headerNavButton[aria-current='page'] {
+  color: white;
+  border-bottom-color: rgb(224 231 159);
+}
+
+.headerNavButton[aria-current='page'] {
+  font-weight: 800;
+}
+
+.headerNavButton:focus-visible {
+  outline: 2px solid rgb(224 231 159);
+  outline-offset: 3px;
+}
+
+@keyframes neonGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgb(213 224 113 / 65%);
+  }
+  50% {
+    box-shadow: 0 0 22px rgb(213 224 113 / 85%);
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    gap: 0.5rem;
+    padding: 0.85rem 0.5rem 1rem;
+  }
+
+  .headerNavList {
+    gap: 0;
+  }
+
+  .headerNavButton {
+    padding-inline: 0.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header::before {
+    animation: none;
+    box-shadow: 0 0 12px rgb(213 224 113 / 65%);
+  }
+
+  .headerNavButton {
+    transition: none;
+  }
 }
